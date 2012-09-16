@@ -1,0 +1,8 @@
+*.pbxuser
+*.mode1v3
+.DS_Store
+profile
+Localizable.strings.new
+Localizable.strings.old
+project.xcworkspace/
+xcuserdata/

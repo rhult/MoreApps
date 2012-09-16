@@ -1,0 +1,137 @@
+body {
+  padding:10px;
+  margin:0;
+  background-color:#bfc0c2;
+  -webkit-text-size-adjust:none; /* Never autoresize text */
+
+  /* Default text */
+  font-family:HelveticaNeue;
+  font-size:13px;
+  font-weight:bold;
+  color:#4f5459;
+  text-shadow:0px 1px 1px #d6d6d6;
+}
+
+/* List header */
+h1 {
+  font-size:17px;
+  color:##2c2f33;
+  margin-left:6px;
+  margin-bottom:6px;
+}
+
+/* Name */
+h2 {
+  font-size:17px;
+  color:#000;
+  margin-top:0px;
+  margin-bottom:2px;
+}
+
+/* Category */
+h3 {
+  font-size:13px;
+  color:#4f5459;
+  margin-top:0px;
+  margin-bottom:2px;
+}
+
+.summary {
+  margin-top:0px;
+  margin-bottom:2px;
+}
+
+.appList {
+  border:1px solid #505153;
+  border-radius:5px;
+  -webkit-box-shadow:inset 0 0 2px #444;
+}
+
+.appBox {
+  margin:0px;
+  margin-left:1px;
+  margin-right:1px;
+  border-top:solid 1px #c7c7c7;
+  border-bottom:solid 1px #959596;
+}
+
+.appBox.iphone {
+  min-height:64px;
+  padding:8px;
+  padding-bottom:1px;
+}
+
+.appBox.ipad {
+  min-height:70px;
+  padding:12px;
+}
+
+.appBox:last-child {
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  border-bottom-width:0;
+  margin-bottom:1px;
+}
+
+.appBox:first-child {
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-top-width:0;
+  margin-top:1px;
+}
+
+.appBox:nth-child(odd) {
+   background-color:#bcbcbc;
+}
+
+.appBox:nth-child(even) {
+  background-color:#aeaeae;
+}
+
+.icon {
+  float:left;
+  margin-right:14px;
+  background-size:100%;
+  -webkit-box-shadow:0 0px 2px #000;
+  margin-bottom:8px;
+}
+
+.iconSmall {
+  width:57px;
+  height:57px;
+  border-radius:9px;
+}
+
+.iconLarge {
+  width:72px;
+  height:72px;
+  border-radius:13px;
+}
+
+.storeButton {
+  font-size:14px;
+  text-align:center;
+  line-height:225%;
+  width:150px;
+  height:31px;
+  background-image:url(Button.png);
+  background-repeat:no-repeat;
+  float:right;
+  position:relative;
+  right:4px;
+  top:4px;
+
+  color:#fff;
+  text-shadow:0px -1px 1px #5e6063;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+a:hover {
+  color:inherit;
+}
+.affiliateBox {
+  margin-top:32px;
+}
