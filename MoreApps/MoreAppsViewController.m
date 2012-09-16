@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 Tinybird Interactive AB. All rights reserved.
 //
 
+// Define to 0 if you don't want to use Reachability.
 #define USE_REACHABILITY 1
 
 #import "MoreAppsViewController.h"
