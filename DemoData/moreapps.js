@@ -109,7 +109,7 @@ function generateListForApps(apps)
   language = getLanguageFromLocale(locale);
   iconSubclass = "iconSmall"
   if (device != 'iphone') {
-	iconSubclass = "iconLarge"
+	  iconSubclass = "iconLarge"
   }
   var visibleIndex = 0;
   for (var i = 0; i < apps.length; i++) {
