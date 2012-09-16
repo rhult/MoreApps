@@ -49,10 +49,26 @@ Create appdefinitions.js and fill it with your app definitions (see below). You 
 
 The static server side file uses javascript to define one or two variables with JSON structures. Those two are:
 
-- appDefinitions = { ... } for your list of apps.
-- affiliateAppDefinitions = { ... } for an optional list with apps from affiliates or friends.
+    appDefinitions = { ... } // for your list of apps.
+    affiliateAppDefinitions = { ... } // optional list with apps from affiliates or friends.
 
-The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes.
+The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes. An example of an app entry:
+
+    { "id": "addidoku", // Identifier, used to filter out "self" in from the list
+      "name": {
+        "en": "Addidoku", // English name (can just assign to the "name" directly)
+      },
+      "category": "Games",
+      "summary": {
+        "en": "Addictive Casual Puzzler", // English summary/subtitle
+        "sv": "Beroendeframkallande pusselspel" // Swedish summary/subtitle
+      },
+      "link": "http://itunes.apple.com/app/id510574334?mt=8",
+      "icon": "addidoku-114.png",
+      "type": "free",
+      "showOnLocales": [], // Show on all locales
+      "showOnDevices": [] // Show on all devices
+    }
 
 ## Icons
 
