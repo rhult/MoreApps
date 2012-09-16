@@ -55,9 +55,7 @@ The static server side file uses javascript to define one or two variables with 
 The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes. An example of an app entry:
 
     { "id": "addidoku", // Identifier, used to filter out "self" from the app list.
-      "name": { // Either a dict with language/name pairs, or just the name if not localized.
-        "en": "Addidoku",
-      },
+      "name": "Addidoku", // Either a dict with language/name pairs, or just the name if it's not localized.
       "category": "Games",
       "summary": { // Same as name, either a dict or just the summary.
         "en": "Addictive Casual Puzzler",

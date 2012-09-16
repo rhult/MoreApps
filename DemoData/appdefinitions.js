@@ -64,9 +64,7 @@ appDefinitions = {
 affiliateAppDefinitions = {
     "apps": [
        { "id": "addidoku",
-         "name": {
-           "en": "Addidoku",
-         },
+         "name": "Addidoku",
          "category": "Games",
          "summary": {
            "en": "Addictive Casual Puzzler",
