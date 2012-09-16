@@ -70,7 +70,7 @@ The easiest way to get started is to look at the example version in Data/appdefi
 
 ## Icons
 
-The app icons you provide should be 114x114, and the HTML/CSS output will make it look sharp on retina devices, and still the right size on non-retina devices. The corners are rounded for you so you can just use your regular app icons.
+The app icons you provide should be 114x114, and the HTML/CSS output will make them look sharp on retina devices, and still have the right size on non-retina devices. The corners are rounded for you so you can just use your regular app icons.
 
 # Changes require no updates to the app
 
