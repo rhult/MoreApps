@@ -12,16 +12,6 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (IBAction)hitMe
 {
     MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
@@ -29,6 +19,7 @@
     controller.moreAppsURL = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
     controller.shouldShowDoneButton = YES;
 
+    // Wrap in a navigation controller for the modal case.
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [self presentModalViewController:navController animated:YES];
 }
