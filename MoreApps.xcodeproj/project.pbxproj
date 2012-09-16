@@ -16,9 +16,9 @@
 		15ADD3E21603642700AF0344 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3E11603642700AF0344 /* Default.png */; };
 		15ADD3E41603642800AF0344 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3E31603642800AF0344 /* Default@2x.png */; };
 		15ADD3E61603642800AF0344 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3E51603642800AF0344 /* Default-568h@2x.png */; };
-		15ADD3E91603642800AF0344 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ADD3E81603642800AF0344 /* ViewController.m */; };
-		15ADD3EC1603642800AF0344 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3EA1603642800AF0344 /* ViewController_iPhone.xib */; };
-		15ADD3EF1603642800AF0344 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3ED1603642800AF0344 /* ViewController_iPad.xib */; };
+		15ADD3E91603642800AF0344 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ADD3E81603642800AF0344 /* DemoViewController.m */; };
+		15ADD3EC1603642800AF0344 /* DemoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3EA1603642800AF0344 /* DemoViewController_iPhone.xib */; };
+		15ADD3EF1603642800AF0344 /* DemoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15ADD3ED1603642800AF0344 /* DemoViewController_iPad.xib */; };
 		15ADD3FF1603671000AF0344 /* MoreAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ADD3FC1603671000AF0344 /* MoreAppsViewController.m */; };
 		15ADD4001603671000AF0344 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ADD3FE1603671000AF0344 /* Reachability.m */; };
 		15ADD408160367D500AF0344 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15ADD407160367D500AF0344 /* SystemConfiguration.framework */; };
@@ -48,10 +48,10 @@
 		15ADD3E11603642700AF0344 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		15ADD3E31603642800AF0344 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		15ADD3E51603642800AF0344 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		15ADD3E71603642800AF0344 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		15ADD3E81603642800AF0344 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		15ADD3EB1603642800AF0344 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		15ADD3EE1603642800AF0344 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		15ADD3E71603642800AF0344 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		15ADD3E81603642800AF0344 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		15ADD3EB1603642800AF0344 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DemoViewController_iPhone.xib; sourceTree = "<group>"; };
+		15ADD3EE1603642800AF0344 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DemoViewController_iPad.xib; sourceTree = "<group>"; };
 		15ADD3FB1603671000AF0344 /* MoreAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreAppsViewController.h; sourceTree = "<group>"; };
 		15ADD3FC1603671000AF0344 /* MoreAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreAppsViewController.m; sourceTree = "<group>"; };
 		15ADD3FD1603671000AF0344 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -120,10 +120,10 @@
 				15ADD4091603689900AF0344 /* Generic data for the server side */,
 				15ADD3DE1603642700AF0344 /* AppDelegate.h */,
 				15ADD3DF1603642700AF0344 /* AppDelegate.m */,
-				15ADD3E71603642800AF0344 /* ViewController.h */,
-				15ADD3E81603642800AF0344 /* ViewController.m */,
-				15ADD3EA1603642800AF0344 /* ViewController_iPhone.xib */,
-				15ADD3ED1603642800AF0344 /* ViewController_iPad.xib */,
+				15ADD3E71603642800AF0344 /* DemoViewController.h */,
+				15ADD3E81603642800AF0344 /* DemoViewController.m */,
+				15ADD3EA1603642800AF0344 /* DemoViewController_iPhone.xib */,
+				15ADD3ED1603642800AF0344 /* DemoViewController_iPad.xib */,
 				15ADD3D61603642700AF0344 /* Supporting Files */,
 			);
 			name = "Demo App";
@@ -152,7 +152,6 @@
 				15ADD3FD1603671000AF0344 /* Reachability.h */,
 				15ADD3FE1603671000AF0344 /* Reachability.m */,
 			);
-			name = MoreApps;
 			path = MoreApps;
 			sourceTree = "<group>";
 		};
@@ -237,8 +236,8 @@
 				15ADD3E21603642700AF0344 /* Default.png in Resources */,
 				15ADD3E41603642800AF0344 /* Default@2x.png in Resources */,
 				15ADD3E61603642800AF0344 /* Default-568h@2x.png in Resources */,
-				15ADD3EC1603642800AF0344 /* ViewController_iPhone.xib in Resources */,
-				15ADD3EF1603642800AF0344 /* ViewController_iPad.xib in Resources */,
+				15ADD3EC1603642800AF0344 /* DemoViewController_iPhone.xib in Resources */,
+				15ADD3EF1603642800AF0344 /* DemoViewController_iPad.xib in Resources */,
 				15ADD413160368B000AF0344 /* Button.png in Resources */,
 				15ADD414160368B000AF0344 /* index.html in Resources */,
 				15ADD415160368B000AF0344 /* intensity-114.png in Resources */,
@@ -259,7 +258,7 @@
 			files = (
 				15ADD3DC1603642700AF0344 /* main.m in Sources */,
 				15ADD3E01603642700AF0344 /* AppDelegate.m in Sources */,
-				15ADD3E91603642800AF0344 /* ViewController.m in Sources */,
+				15ADD3E91603642800AF0344 /* DemoViewController.m in Sources */,
 				15ADD3FF1603671000AF0344 /* MoreAppsViewController.m in Sources */,
 				15ADD4001603671000AF0344 /* Reachability.m in Sources */,
 			);
@@ -276,20 +275,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		15ADD3EA1603642800AF0344 /* ViewController_iPhone.xib */ = {
+		15ADD3EA1603642800AF0344 /* DemoViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				15ADD3EB1603642800AF0344 /* en */,
 			);
-			name = ViewController_iPhone.xib;
+			name = DemoViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		15ADD3ED1603642800AF0344 /* ViewController_iPad.xib */ = {
+		15ADD3ED1603642800AF0344 /* DemoViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				15ADD3EE1603642800AF0344 /* en */,
 			);
-			name = ViewController_iPad.xib;
+			name = DemoViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
