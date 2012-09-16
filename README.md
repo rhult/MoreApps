@@ -1,4 +1,4 @@
-# More Apps for iOS
+# More Apps - Cross promotion for iOS apps
 
 This Xcode project contains "More Apps" which is a simple UIViewController presenting a list of your other apps, and optionally apps by your friends/affiliates. The list is completely controlled from the server side, but in a static way so you don't need  a web service running, just a static file. Features:
 
@@ -6,7 +6,7 @@ This Xcode project contains "More Apps" which is a simple UIViewController prese
 * Can be updated without touching the app by editing the static contents on the server
 * Can be used in a navigation hierarchy or as a modal view
 * Handles the network being down, retries automatically when it goes up
-* Localizable
+* Localizable (not to 100% yet but patches are welcome)
 
 ## How it works
 
@@ -20,7 +20,9 @@ There is a client/app side, and a server side component. The client side is a is
 
 ### Client side
 
-SystemConfiguration.framework
+You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You can also add the Reachability class included, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case there an error occurred.
+
+If you do choose to use Reachability, make sure to add SystemConfiguration.framework to the linked in frameworks.
 
 ### Server side
 
@@ -30,15 +32,16 @@ Copy the files in DemoData to your server:
 - moreapps.css
 - moreapps.js
 
-Create appdefinitions.js and fill it with your app definitions (see the version in Data/appdefinitions.js for an example). You can try it out by just view the local index.html on a desktop computer, passing various options like index.html?locale=sv_SE&device=ipad etc.
+Create appdefinitions.js and fill it with your app definitions (see below). You can try it out by just viewing the local index.html on a desktop computer browser, passing various options like index.html?locale=sv_SE&device=iphone etc.
 
 ## Listing the available apps
 
-The static server side file uses JSON to list app definitions. Two variables should be set up:
+The static server side file uses javascript to define one or two variables with JSON structures. Those two are:
 
- foo = bar
- 
- bar = foo
+- appDefinitions = { ... } for your list of apps.
+- affiliateAppDefinitions = { ... } for an optional list with apps from affiliates or friends.
+
+The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes.
 
 ## Changes require no updates to the app
 
