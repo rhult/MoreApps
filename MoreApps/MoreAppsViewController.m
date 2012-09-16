@@ -15,8 +15,10 @@
 #endif
 
 
-#define kCssTemplate @"body { -webkit-text-size-adjust:none; font-family:HelveticaNeue; text-shadow:0px 1px 1px #d6d6d6; margin-top:2em; } h1 { font-size:17px; color:#2c2f33; }"
-#define kHtmlTemplate @"<!DOCTYPE html><html><head><meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\"><style>" kCssTemplate @"</style></head><body><h1><center>%@</center></h1></body></html>"
+#define kCssTemplate @"body { -webkit-text-size-adjust:none; font-family:HelveticaNeue; text-shadow:0px 1px 1px #d6d6d6; margin-top:2em; }" \
+  @" h1 { font-size:17px; color:#2c2f33; }"
+#define kHtmlTemplate @"<!DOCTYPE html><html><head><meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\">" \
+  @"<style>" kCssTemplate @"</style></head><body><h1><center>%@</center></h1></body></html>"
 
 typedef enum {
     kStateInitial = 0,
