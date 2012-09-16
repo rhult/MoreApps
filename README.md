@@ -54,20 +54,20 @@ The static server side file uses javascript to define one or two variables with 
 
 The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes. An example of an app entry:
 
-    { "id": "addidoku", // Identifier, used to filter out "self" in from the list
-      "name": {
-        "en": "Addidoku", // English name (can just assign to the "name" directly)
+    { "id": "addidoku", // Identifier, used to filter out "self" from the app list.
+      "name": { // Either a dict with language/name pairs, or just the name if not localized.
+        "en": "Addidoku",
       },
       "category": "Games",
-      "summary": {
-        "en": "Addictive Casual Puzzler", // English summary/subtitle
-        "sv": "Beroendeframkallande pusselspel" // Swedish summary/subtitle
+      "summary": { // Same as name, either a dict or just the summary.
+        "en": "Addictive Casual Puzzler",
+        "sv": "Beroendeframkallande pusselspel"
       },
       "link": "http://itunes.apple.com/app/id510574334?mt=8",
       "icon": "addidoku-114.png",
       "type": "free",
-      "showOnLocales": [], // Show on all locales
-      "showOnDevices": [] // Show on all devices
+      "showOnLocales": [], // List of locales, e.g. [ "sv_SE", "nn" ]. Empty list means show on all locales.
+      "showOnDevices": [] // List of device types, e.g. [ "iphone", "ipad" ]. Empty list means show on all devices.
     }
 
 ## Icons

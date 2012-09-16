@@ -1,18 +1,18 @@
 appDefinitions = {
     "company": "Tinybird Interactive",
     "apps": [
-        { "id": "shoppy",
-          "name": "Shoppy",
+        { "id": "shoppy", // Identifier, used to filter out "self" from the app list.
+          "name": "Shoppy", // Either a dict with language/name pairs, or just the name if not localized.
           "category": "Lifestyle",
-          "summary": {
-			      "en": "Grocery shopping made easy", // English summary
-			      "sv": "Inköpslista med fokus på enkelhet" // Swedish summary
+          "summary": { // Same as name, either a dict or just the summary.
+			      "en": "Grocery shopping made easy",
+			      "sv": "Inköpslista med fokus på enkelhet"
 		      },
           "link": "http://itunes.apple.com/app/id421361944?mt=8",
           "icon": "shoppy-114.png",
           "type": "paid",
-          "showOnLocales": [], // Show in all locales
-          "showOnDevices": [] // Show on all devices
+          "showOnLocales": [], // List of locales, e.g. [ "sv_SE", "nn" ]. Empty list means show on all locales.
+          "showOnDevices": [] // List of device types, e.g. [ "iphone", "ipad" ]. Empty list means show on all devices.
         },
 
         { "id": "intensity",
@@ -22,25 +22,25 @@ appDefinitions = {
           "link": "http://itunes.apple.com/app/id497317304?mt=8",
           "icon": "intensity-114.png",
           "type": "paid",
-          "showOnLocales": [], // Show in all locales
-          "showOnDevices": [] // Show on all devices
+          "showOnLocales": [],
+          "showOnDevices": []
         },
 
         { "id": "nutrientguide",
           "name": {
-			      "en": "Nutrient Guide", // English name
-			      "sv": "Näringsguide" // Swedish name
+			      "en": "Nutrient Guide",
+			      "sv": "Näringsguide"
 		      },
           "category": "Health & Fitness",
           "summary": {
-			      "en": "Eat healthy, keep track, take control!", // English summary
-			      "sv": "Ät hälsosamt, håll koll, ta kontroll!" // Swedish summary
+			      "en": "Eat healthy, keep track, take control!",
+			      "sv": "Ät hälsosamt, håll koll, ta kontroll!"
 		      },
           "link": "http://itunes.apple.com/app/id375930430?mt=8",
           "icon": "nutrientguide-114.png",
           "type": "paid",
-          "showOnLocales": [], // Show in all locales
-          "showOnDevices": [] // Show on all devices
+          "showOnLocales": [],
+          "showOnDevices": []
         },
         { "id": "animalescape",
           "name": {
@@ -55,8 +55,8 @@ appDefinitions = {
           "link": "http://itunes.apple.com/app/id481609947?mt=8&uo=4",
           "icon": "animalescape-114.png",
           "type": "paid",
-          "showOnLocales": [], // Show in all locales
-          "showOnDevices": [ "ipad" ] // Only show this app on iPads
+          "showOnLocales": [],
+          "showOnDevices": [ "ipad" ]
         }
     ]
 }
