@@ -28,13 +28,12 @@ If you do choose to use Reachability, make sure to add SystemConfiguration.frame
 
     MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
     controller.appIdentifier = @"DemoApp";
-    controller.moreAppsURL = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
+    controller.moreAppsURL = [NSURL URLWithString:@"http://mywebsite.com/mypromopage.html"];
     controller.shouldShowDoneButton = YES;
     
     // Wrap in a navigation controller for the modal case.
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [self presentModalViewController:navController animated:YES];
-
 
 ### Server side
 
@@ -59,11 +58,11 @@ The easiest way to get started is to look at the example version in Data/appdefi
 
 The app icons you provide should be 114x114, and the HTML/CSS output will make it look sharp on retina devices, and still the right size on non-retina devices. The corners are rounded for you so you can just use your regular app icons.
 
-### Changes require no updates to the app
+# Changes require no updates to the app
 
 If you want to add or remove apps, or do things like update icons or descriptions, just edit the appdefinitions.js file and the app icons. Changes are then immediately visible in your apps using this.
 
-### License
+# License
 
 This project is available under the [BSD 2-Clause “Simplified” License](http://www.opensource.org/licenses/BSD-2-Clause):
 
