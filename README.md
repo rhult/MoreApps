@@ -20,21 +20,19 @@ There is a client/app side, and a server side component. The client side is a is
 
 ### Client side
 
-You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You can also add the Reachability class included, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case there an error occurred.
+You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You can also add the included Reachability class, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case there an error occurred.
 
 If you do choose to use Reachability, make sure to add SystemConfiguration.framework to the linked in frameworks.
 
 ### Server side
 
-Copy the files in DemoData to your server:
+Copy the following files in the DemoData folder to your server:
 
 - index.html
 - moreapps.css
 - moreapps.js
 
 Create appdefinitions.js and fill it with your app definitions (see below). You can try it out by just viewing the local index.html on a desktop computer browser, passing various options like index.html?locale=sv_SE&device=iphone etc.
-
-The app icons you provide should be 114x114, and the HTML/CSS output will make it look sharp on retina devices, and still the right size on non-retina devices. The corners are rounded for you so you can just use your regular app icons.
 
 ## Listing the available apps
 
@@ -44,6 +42,10 @@ The static server side file uses javascript to define one or two variables with 
 - affiliateAppDefinitions = { ... } for an optional list with apps from affiliates or friends.
 
 The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes.
+
+## Icons
+
+The app icons you provide should be 114x114, and the HTML/CSS output will make it look sharp on retina devices, and still the right size on non-retina devices. The corners are rounded for you so you can just use your regular app icons.
 
 ## Changes require no updates to the app
 
