@@ -27,15 +27,16 @@ You need the two files MoreAppsViewController.m and MoreAppsViewController.h. Yo
 If you do choose to use Reachability, make sure to add SystemConfiguration.framework to the linked in frameworks.
 
 #### Example of presenting the view
+```objective-c
+MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
+controller.appIdentifier = @"DemoApp";
+controller.moreAppsURL = [NSURL URLWithString:@"http://mywebsite.com/mypromopage.html"];
+controller.shouldShowDoneButton = YES;
 
-    MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
-    controller.appIdentifier = @"DemoApp";
-    controller.moreAppsURL = [NSURL URLWithString:@"http://mywebsite.com/mypromopage.html"];
-    controller.shouldShowDoneButton = YES;
-    
-    // Wrap in a navigation controller for the modal case.
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [self presentModalViewController:navController animated:YES];
+// Wrap in a navigation controller for the modal case.
+UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+[self presentModalViewController:navController animated:YES];
+```
 
 ### Server side
 
@@ -51,12 +52,13 @@ Create appdefinitions.js and fill it with your app definitions (see below). You 
 
 The static server side file uses javascript to define one or two variables with JSON structures. Those two are:
 
-    appDefinitions = { ... } // for your list of apps.
-    affiliateAppDefinitions = { ... } // optional list with apps from affiliates or friends.
+    appDefinitions = { ... } // For your list of apps.
+    affiliateAppDefinitions = { ... } // Optional list with apps from affiliates or friends.
 
 The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes. An example of an app entry:
 
-    { "id": "addidoku", // Identifier, used to filter out "self" from the app list.
+```js
+    { "id": "addidoku", // Identifier, used to filter out "self" from the app list. Just a string.
       "name": "Addidoku", // Either a dict with language/name pairs, or just the name if it's not localized.
       "category": "Games",
       "summary": { // Same as name, either a dict or just the summary.
@@ -69,6 +71,7 @@ The easiest way to get started is to look at the example version in Data/appdefi
       "showOnLocales": [], // List of locales, e.g. [ "sv_SE", "nn" ]. Empty list means show on all locales.
       "showOnDevices": [] // List of device types, e.g. [ "iphone", "ipad" ]. Empty list means show on all devices.
     }
+```
 
 #### Icons
 
