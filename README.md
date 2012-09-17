@@ -26,7 +26,7 @@ The CSS is based on the original App Store search listings which since have chan
 
 ### Client side
 
-You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You can also add the included Reachability class, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case there an error occurred.
+You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You can also add the included Reachability class, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case an error occurred.
 
 If you do choose to use Reachability, make sure to add SystemConfiguration.framework to the linked in frameworks.
 
