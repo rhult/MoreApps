@@ -8,6 +8,10 @@ This Xcode project contains "More Apps" which is a simple UIViewController prese
 * Handles the network being down, retries automatically when it goes up
 * Localizable (not to 100% yet but patches are welcome)
 
+## Try it
+
+Just open the project in Xcode, and hit Run. Note that the App Store can't be opened in the simulator so if you want to try all the aspects you might want to run on an actual device.
+
 ## How it works
 
 There is a client/app side, and a server side component. The client side is a is a simple view that shows the content of the URL you specify, and some logic to handle progress indication and  error handling, and opening the App Store in a civilized manner. The server side is a static web page using javascript to dynamically build the page on the client side, filtering a list of app definitions depending on locale, device type and app ID supplied by the app.
