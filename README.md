@@ -47,7 +47,7 @@ Copy the following files in the DemoData folder to your server:
 
 Create appdefinitions.js and fill it with your app definitions (see below). You can try it out by just viewing the local index.html on a desktop computer browser, passing various options like index.html?locale=sv_SE&device=iphone etc.
 
-## Listing the available apps
+#### Listing the available apps
 
 The static server side file uses javascript to define one or two variables with JSON structures. Those two are:
 
@@ -70,11 +70,11 @@ The easiest way to get started is to look at the example version in Data/appdefi
       "showOnDevices": [] // List of device types, e.g. [ "iphone", "ipad" ]. Empty list means show on all devices.
     }
 
-## Icons
+#### Icons
 
 The app icons you provide should be 114x114, and the HTML/CSS output will make them look sharp on retina devices, and still have the right size on non-retina devices. The corners are rounded for you so you can just use your regular app icons.
 
-# Changes require no updates to the app
+## Changes require no updates to the app
 
 If you want to add or remove apps, or do things like update icons or descriptions, just edit the appdefinitions.js file and the app icons. Changes are then immediately visible in your apps using this.
 
