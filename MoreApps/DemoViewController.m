@@ -16,8 +16,12 @@
 {
     MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
     controller.appIdentifier = @"DemoApp";
+
+    // For local testing, we just point to the included page.
     controller.moreAppsURL = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-    controller.shouldShowDoneButton = YES;
+
+    // For a real-world app, point to your web server.
+    //controller.moreAppsURL = [NSURL URLWithString:@"http://mynonexistingwebsite.com/mypromopage.html"];
 
     // Wrap in a navigation controller for the modal case.
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

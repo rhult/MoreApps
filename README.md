@@ -30,8 +30,7 @@ If you do choose to use Reachability, make sure to add SystemConfiguration.frame
 ```objective-c
 MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
 controller.appIdentifier = @"DemoApp";
-controller.moreAppsURL = [NSURL URLWithString:@"http://mywebsite.com/mypromopage.html"];
-controller.shouldShowDoneButton = YES;
+controller.moreAppsURL = [NSURL URLWithString:@"http://mynonexistingwebsite.com/mypromopage.html"];
 
 // Wrap in a navigation controller for the modal case.
 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

@@ -39,6 +39,7 @@ typedef enum {
 #endif
 
 @property(nonatomic, assign) State state;
+@property(nonatomic, assign) BOOL shouldShowDoneButton;
 
 @end
 
@@ -47,6 +48,15 @@ typedef enum {
 + (Class)webViewClass
 {
     return [UIWebView class];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _shouldShowDoneButton = YES;
+    }
+    return self;
 }
 
 - (NSURL *)fullURL
@@ -133,10 +143,6 @@ typedef enum {
     self.view = webView;
     self.title = NSLocalizedString(@"More Apps", @"MoreApps, view controller title");
 
-    if (self.shouldShowDoneButton) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
-    }
-
     [self loadUpdatingPage];
 }
 
@@ -147,6 +153,15 @@ typedef enum {
 #endif
 
     [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // We want a Done button only if there is no navigation stack. This means it will works automagically for navigation
+    // based UIs and also modal ones where there is just this controller added to a navigation controller.
+    if (self.shouldShowDoneButton && [self.navigationController.viewControllers count] == 1) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done)];
+    }
 }
 
 - (void)done
@@ -183,15 +198,19 @@ typedef enum {
         return YES;
     }
 
-    appStoreURL = request.URL;
-    appStoreAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Open App Store", @"MoreApps, app store alert title")
-                                                   message:NSLocalizedString(@"This will open App Store to show the selected app.", @"MoreApps, app store alert")
-                                                  delegate:self
-                                         cancelButtonTitle:NSLocalizedString(@"Cancel", @"MoreApps, button")
-                                         otherButtonTitles:NSLocalizedString(@"OK", @"MoreApps, button"), nil];
-    [appStoreAlertView show];
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        appStoreURL = request.URL;
+        appStoreAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Open App Store", @"MoreApps, app store alert title")
+                                                       message:NSLocalizedString(@"This will open App Store to show the selected app.", @"MoreApps, app store alert")
+                                                      delegate:self
+                                             cancelButtonTitle:NSLocalizedString(@"Cancel", @"MoreApps, button")
+                                             otherButtonTitles:NSLocalizedString(@"OK", @"MoreApps, button"), nil];
+        [appStoreAlertView show];
 
-    return NO;
+        return NO;
+    }
+
+    return YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
