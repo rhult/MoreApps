@@ -14,7 +14,7 @@ Just open the project in Xcode, and hit Run. Note that the App Store can't be op
 
 ## How it works
 
-There is a client/app side, and a server side component. The client side is a is a simple view that shows the content of the URL you specify, and some logic to handle progress indication and  error handling, and opening the App Store in a civilized manner. The server side is a static web page using javascript to dynamically build the page on the client side, filtering a list of app definitions depending on locale, device type and app ID supplied by the app.
+There is a client side component (for the app), and a server side component. The client side is a simple view that shows the content of the URL you specify, and some logic to handle progress indication and  error handling. It also takes care of opening the App Store in a civilized manner. The server side is a static web page using javascript to dynamically build the page on the client side, filtering a list of app definitions depending on locale, device type and app ID supplied by the app.
 
 ## What it looks like
 
