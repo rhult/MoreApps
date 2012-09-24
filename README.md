@@ -1,11 +1,16 @@
 # More Apps - Cross promotion for iOS apps
 
+Say you have an app that is awesome and gets lots of downloads every day. What if you could easily tell those users that you have a bunch of apps that are equally awesome, and that they should check them out too!
+
+"More Apps" is my attempt at solving this in a hopefully unobtrusive and very pragmatic way.
+
 This Xcode project contains "More Apps" which is a simple UIViewController presenting a list of your other apps, and optionally apps by your friends/affiliates. The list is completely controlled from the server side, but in a static way so you don't need  a web service running, just a static file. Features:
 
+* Open source license
 * Works for both iPhone and iPad
 * Can be updated without touching the app by editing the static contents on the server
 * Can be used in a navigation hierarchy or as a modal view
-* Handles the network being down, retries automatically when it goes up
+* Optionally handles the network being down, retries automatically when it goes up
 * Localizable (not to 100% yet but patches are welcome)
 
 ## Try it
@@ -18,9 +23,11 @@ There is a client side component (for the app), and a server side component. The
 
 ## What it looks like
 
-The CSS is based on the original App Store search listings which since have changed dramatically. The good news is you can easily tweak this by editing the CSS yourself if you want another look. Here's the default style:
+The CSS is based on the original App Store search listings which since have changed dramatically in iOS 6. The good news is you can easily tweak this by editing the CSS yourself if you want another look. Here's the default style:
 
 ![More Apps example screenshot](https://github.com/rhult/MoreApps/raw/master/Screenshots/Example.png)
+
+If anyone creates other styles, don't hesitate to let me know so I can incorporate them here.
 
 ## Using it
 
@@ -58,7 +65,7 @@ The static server side file uses javascript to define one or two variables with 
     appDefinitions = { ... } // For your list of apps.
     affiliateAppDefinitions = { ... } // Optional list with apps from affiliates or friends.
 
-The easiest way to get started is to look at the example version in Data/appdefinitions.js and edit it for your own purposes. An example of an app entry:
+The easiest way to get started is to look at the example version in DemoData/appdefinitions.js and edit it for your own purposes. An example of an app entry:
 
 ```js
     { "id": "addidoku", // Identifier, used to filter out "self" from the app list. Just a string.
@@ -70,7 +77,7 @@ The easiest way to get started is to look at the example version in Data/appdefi
       },
       "link": "http://itunes.apple.com/app/id510574334?mt=8",
       "icon": "addidoku-114.png",
-      "type": "free",
+      "type": "free", // Can be free or paid, affects the title of the button when running on iPad.
       "showOnLocales": [], // List of locales, e.g. [ "sv_SE", "nn" ]. Empty list means show on all locales.
       "showOnDevices": [] // List of device types, e.g. [ "iphone", "ipad" ]. Empty list means show on all devices.
     }
@@ -83,6 +90,10 @@ The app icons you provide should be 114x114, and the HTML/CSS output will make t
 ## Changes require no updates to the app
 
 If you want to add or remove apps, or do things like update icons or descriptions, just edit the appdefinitions.js file and the app icons. Changes are then immediately visible in your apps using this.
+
+## Limitations
+
+As you see in the screenshot above, there is no information about the prices. You could hack the code to display the right price and currency depending on the locale but since it would have to be done manually, I went with the much simpler solution - to not show the price.
 
 # License
 
