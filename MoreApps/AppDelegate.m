@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  CrossPromo
+//  MoreApps
 //
 //  Created by Richard Hult on 2012-09-14.
 //  Copyright (c) 2012 Tinybird Interactive AB. All rights reserved.
@@ -17,9 +17,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[DemoViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        self.viewController = [[DemoViewController alloc] initWithNibName:@"DemoViewController_iPhone" bundle:nil];
     } else {
-        self.viewController = [[DemoViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.viewController = [[DemoViewController alloc] initWithNibName:@"DemoViewController_iPad" bundle:nil];
     }
     self.window.rootViewController = self.viewController;
 
