@@ -12,7 +12,7 @@
 
 @implementation DemoViewController
 
-- (IBAction)hitMe
+- (UINavigationController *)moreAppsNavigationViewController
 {
     MoreAppsViewController *controller = [[MoreAppsViewController alloc] init];
     controller.appIdentifier = @"DemoApp";
@@ -25,6 +25,17 @@
 
     // Wrap in a navigation controller for the modal case.
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    return navController;
+}
+
+- (IBAction)hitMe
+{
+    UINavigationController *navController = [self moreAppsNavigationViewController];
+
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        navController.modalPresentationStyle = UIModalPresentationPageSheet;
+    }
+
     [self presentModalViewController:navController animated:YES];
 }
 
