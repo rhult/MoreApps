@@ -166,8 +166,8 @@ typedef enum {
 
 - (void)done
 {
-    if ([_delegate respondsToSelector:@selector(moreAppsViewFinished:)]) {
-        [_delegate moreAppsViewFinished:self];
+    if ([self.delegate respondsToSelector:@selector(moreAppsViewFinished:)]) {
+        [self.delegate moreAppsViewFinished:self];
     } else {
         [self.parentViewController dismissModalViewControllerAnimated:YES];
     }
