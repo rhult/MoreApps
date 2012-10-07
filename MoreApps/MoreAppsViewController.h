@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <StoreKit/StoreKit.h>
 
 
 @protocol MoreAppsViewDelegate;
 
-@interface MoreAppsViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>
+@interface MoreAppsViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate, SKStoreProductViewControllerDelegate>
 
 @property(nonatomic, weak) id<MoreAppsViewDelegate> delegate;
 @property(nonatomic, strong) NSURL *moreAppsURL;

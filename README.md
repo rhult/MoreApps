@@ -12,6 +12,7 @@ This Xcode project contains "More Apps" which is a simple UIViewController prese
 * Can be used in a navigation hierarchy or as a modal view
 * Optionally handles the network being down, retries automatically when it goes up
 * Localizable (not to 100% yet but patches are welcome)
+* Uses StoreKit to show the App Store product page inside the app on iOS 6, opens App Store for iOS 5.
 
 ## Try it
 
@@ -19,7 +20,7 @@ Just open the project in Xcode, and hit Run. Note that the App Store can't be op
 
 ## How it works
 
-There is a client side component (for the app), and a server side component. The client side is a simple view that shows the content of the URL you specify, and some logic to handle progress indication and  error handling. It also takes care of opening the App Store in a civilized manner. The server side is a static web page using javascript to dynamically build the page on the client side, filtering a list of app definitions depending on locale, device type and app ID supplied by the app.
+There is a client side component (for the app), and a server side component. The client side is a simple view that shows the content of the URL you specify, and some logic to handle progress indication and  error handling. It also takes care of opening the App Store in a civilized manner (including using the StoreKit provided UI on iOS 6). The server side is a static web page using javascript to dynamically build the page on the client side, filtering a list of app definitions depending on locale, device type and app ID supplied by the app.
 
 ## What it looks like
 
@@ -33,9 +34,9 @@ If anyone creates other styles, don't hesitate to let me know so I can incorpora
 
 ### Client side
 
-You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You can also add the included Reachability class, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case an error occurred.
+You need the two files MoreAppsViewController.m and MoreAppsViewController.h. You need to add StoreKit.framework to the linked frameworks.
 
-If you do choose to use Reachability, make sure to add SystemConfiguration.framework to the linked in frameworks.
+You can also add the included Reachability class, or use your own copy if you already have one. If you do, the view controller will automatically reload once the network becomes available in case an error occurred. If you do choose to use Reachability, make sure to add SystemConfiguration.framework to the linked in frameworks.
 
 #### Example of presenting the view
 ```objective-c

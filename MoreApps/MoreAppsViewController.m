@@ -199,15 +199,21 @@ typedef enum {
     }
 
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        appStoreURL = request.URL;
-        appStoreAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Open App Store", @"MoreApps, app store alert title")
-                                                       message:NSLocalizedString(@"This will open App Store to show the selected app.", @"MoreApps, app store alert")
-                                                      delegate:self
-                                             cancelButtonTitle:NSLocalizedString(@"Cancel", @"MoreApps, button")
-                                             otherButtonTitles:NSLocalizedString(@"OK", @"MoreApps, button"), nil];
-        [appStoreAlertView show];
+        NSError *error;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"id([0-9]+)" options:0 error:&error];
+        if (error) {
+            NSLog(@"Programming error, bad regex: %@", error);
+            return NO;
+        }
 
-        return NO;
+        NSString *URLString = [request.URL absoluteString];
+        NSArray *matches = [regex matchesInString:URLString options:0 range:NSMakeRange(0, [URLString length])];
+        if ([matches count] == 1) {
+            NSTextCheckingResult *result = matches[0];
+            NSString *identifier = [URLString substringWithRange:[result rangeAtIndex:1]];
+            [self showAppWithIdentifier:identifier];
+            return NO;
+        }
     }
 
     return YES;
@@ -242,6 +248,35 @@ typedef enum {
 {
     //NSLog(@"Did fail: %@", error);
     [self loadErrorPage];
+}
+
+#pragma mark - SKStoreProductViewController delegate
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+    [viewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)showAppWithIdentifier:(NSString *)identifier
+{
+    // Open in SKStoreProductViewController where available (for iOS 6+).
+    if ([SKStoreProductViewController class]) {
+        SKStoreProductViewController *controller = [[SKStoreProductViewController alloc] init];
+        controller.delegate = self;
+        [controller loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier : identifier }
+                              completionBlock:NULL];
+
+        [self presentModalViewController:controller animated:YES];
+        return;
+    }
+
+    // Fall back to opening App Store for iOS 5.
+    appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/app/id%@?mt=8", identifier]];
+    appStoreAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Open App Store", @"MoreApps, app store alert title")
+                                                   message:NSLocalizedString(@"This will open App Store to show the selected app.", @"MoreApps, app store alert")
+                                                  delegate:self
+                                         cancelButtonTitle:NSLocalizedString(@"Cancel", @"MoreApps, button")
+                                         otherButtonTitles:NSLocalizedString(@"OK", @"MoreApps, button"), nil];
+    [appStoreAlertView show];
 }
 
 @end
